@@ -1,0 +1,22 @@
+{% if comment_count %}
+<div class="post-comments">
+    <header>
+        <h3 class="h6">Post Comments<span class="no-of-comments">({{ comment_count }})</span></h3>
+    </header>
+<div class="overflow-auto p-3 bg-light" style="max-height: 250px;">
+    {% for item in comment_data %}
+    <div class="comment">
+        <div class="comment-header d-flex justify-content-between">
+            <div class="user d-flex align-items-center">
+                <div class="image"><img src="{{ item.user_image }}" alt="..." class="img-fluid rounded-circle"></div>
+                <div class="title"><strong>{{ item.comment.name }}</strong><span class="date">{{ item.comment.date_added|date:'F d | Y' }}</span></div>
+            </div>
+        </div>
+        <div class="comment-body">
+            <p>{{ item.comment.body }}</p>
+        </div>
+    </div>
+    {% endfor %}
+   </div>
+</div>
+{% endif %}

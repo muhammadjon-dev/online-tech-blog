@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+        {% block links %}
+        {% endblock links %}
+        {% include 'layout/head.html' %}
+        <title>
+        {% block title %}
+        {% endblock title %}
+      </title>
+  </head>
+  <body>
+    {% include 'layout/header.html' %}
+ 
+    {% block main %}
+    {% endblock main %}
+    
+    {% include 'layout/footer.html' %}
+    {% block scripts %}
+    {% endblock scripts %}
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/popper.js/umd/popper.min.js' %}"> </script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'vendor/jquery.cookie/jquery.cookie.js' %}"> </script>
+    <script src="{% static 'vendor/@fancyapps/fancybox/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'js/front.js' %}"></script>
+</html>
+
+</body>

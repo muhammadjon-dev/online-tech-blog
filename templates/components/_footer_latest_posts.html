@@ -1,0 +1,12 @@
+<a href="#">
+    <div class="post d-flex align-items-center">
+        <div class="image">
+            <img src="{{ post.photo_url }}"
+                 alt="..."
+                 class="img-fluid">
+        </div>
+        <div class="title">
+            <strong>{{ post.title|truncatewords:6 }}</strong><span class="date last-meta">{{ post.create_at|date:'F d, Y' }}</span>
+        </div>
+    </div>
+</a>

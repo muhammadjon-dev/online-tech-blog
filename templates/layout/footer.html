@@ -1,0 +1,33 @@
+{% load website_tags %}
+{% get_posts_by_views as posts_by_views %}
+<footer class="main-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">{% include 'components/_footer_contact_details.html' %}</div>
+            <div class="col-md-4">{% include 'components/_footer_menu.html' %}</div>
+            <div class="col-md-4">
+                
+                    {% for post in posts_by_views %}
+                        <div class="latest-posts">{% include 'components/_footer_latest_posts.html' %}</div>
+                    {% endfor %}
+                
+            </div>
+        </div>
+    </div>
+    <div class="copyrights">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2022. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <p>
+                        Template By
+                        <a href="https://bootstrapious.com/p/bootstrap-carousel"
+                           class="text-white">Bootstrapious</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

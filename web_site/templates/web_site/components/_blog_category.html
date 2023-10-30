@@ -1,0 +1,11 @@
+{% load website_tags %}
+
+<div class="widget categories">
+    <header>
+      <h3 class="h6">Categories</h3>
+    </header>
+    {% get_category as categories %}
+    {% for category in categories %}
+    <div class="item d-flex justify-content-between"><a href="#">{{ category|title }}</a><span>{{ category.post_set.count }}</span></div>
+    {% endfor %}
+  </div>

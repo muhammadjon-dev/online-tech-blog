@@ -1,0 +1,30 @@
+{% load website_tags %}
+{% get_posts_by_views as posts_by_views %}
+<div class="widget latest-posts">
+    <header>
+        <h3 class="h6">Posts By Views</h3>
+    </header>
+    <div class="blog-posts">
+      {% for post in posts_by_views %}
+        <a href="#">
+            <div class="item d-flex align-items-center">
+                <div class="image">
+                  <img src="{{ post.photo_url }}"
+                         alt="..."
+                         class="img-fluid">
+                </div>
+                <div class="title">
+                    <strong>{{ post.title|truncatewords:6 }}</strong>
+                    <div class="d-flex align-items-center">
+                        <div class="views">
+                            <i class="icon-eye"></i> {{ post.views_count }}
+                        </div>
+                        <div class="comments">
+                            <i class="icon-comment"></i>{{ post.comments.count }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
